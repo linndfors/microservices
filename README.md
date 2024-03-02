@@ -1,1 +1,1 @@
-Hazelcast
+Micro-Hazelcast
