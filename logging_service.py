@@ -22,6 +22,7 @@ def log_message():
             message = {'id': entry[0], 'message': entry[1]}
             messages.append(message)
         print(f"Returning messages: {messages}")
+        print(jsonify(messages))
         return jsonify(messages)
 
 if __name__ == '__main__':
