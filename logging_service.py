@@ -19,11 +19,11 @@ def log_message():
     elif request.method == 'GET':
         messages = []
         for entry in log_messages.entry_set():
-            message = {'id': entry[0], 'message': entry[1]}
-            messages.append(message)
-        print(f"Returning messages: {messages}")
-        print(jsonify(messages))
-        return jsonify(messages)
+            # print(entry)
+            # message = {'id': entry[0], 'message': entry[1]}
+            messages.append(entry[1])
+        print(messages)
+        return jsonify({'messages': messages})
 
 if __name__ == '__main__':
-    app.run(port=5004)
+    app.run(port=5002)
