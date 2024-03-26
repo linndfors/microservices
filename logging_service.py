@@ -17,13 +17,9 @@ def log_message():
         print(f"Received message: {msg}")
         return {'result': 'success'}
     elif request.method == 'GET':
-        messages = []
-        for entry in log_messages.entry_set():
-            # print(entry)
-            # message = {'id': entry[0], 'message': entry[1]}
-            messages.append(entry[1])
-        print(messages)
+        messages = list(log_messages.values())
+        # print(messages)
         return jsonify({'messages': messages})
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    app.run(port=5004)
